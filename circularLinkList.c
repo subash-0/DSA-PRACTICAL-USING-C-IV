@@ -75,6 +75,43 @@ void insertInCList(){
         printf("%d is inserted",newptr->info);
     }
 }
+
+void deleteFromCList(){
+    ptr = head;
+    int key;
+    if(head != NULL)
+    {
+     printf("Enter the key to delete:");
+     scanf("%d",&key);
+     do{
+        prevptr = ptr;
+        ptr=ptr->next;
+     }while(ptr->info!=key && ptr != head);
+        if(ptr->info!=key)
+        {
+            printf("node with info does not exist.");
+        }else {
+            if(ptr==head){
+                if(ptr->next == head)
+                {
+                      head=NULL;
+                }else {
+                     head = ptr->next;
+                    prevptr->next = ptr->next;
+                    }
+               
+            }else {
+            prevptr->next = ptr->next;
+            }
+            printf("%d is deleted.", ptr->info);
+            free(ptr);
+
+        }
+    }else {
+    printf("Link List is empty !");
+    }
+    
+}
  int main(){
     create();
     int c;
@@ -90,7 +127,7 @@ void insertInCList(){
         display();
         break;
         case 3:
-        printf("DELETE FUNCTION WILL BE CREATED SOON !");
+        deleteFromCList();
         break;
         case 4:
         exit(0);
