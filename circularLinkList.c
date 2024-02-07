@@ -47,7 +47,34 @@ struct node* getnode()
     }
  }
 
+void insertInCList(){
+    int key; 
+    newptr = getnode();
+    if (head != NULL) {
+        printf("Enter the key after which you want to put:");
+        scanf("%d",&key);
 
+        ptr = head;
+        do{
+            ptr = ptr->next;
+        }while (ptr->info !=key && ptr!=head);
+
+        if(ptr->info!=key){
+            printf("Node with key does not exist .");
+
+        }else { 
+            printf("%d is inserted !",newptr->info);
+            newptr->next = ptr->next;
+            ptr->next = newptr;
+        
+        }
+    }
+    else {
+        head = newptr;
+        newptr->next = head;
+        printf("%d is inserted",newptr->info);
+    }
+}
  int main(){
     create();
     int c;
@@ -57,7 +84,7 @@ struct node* getnode()
     scanf("%d",&c);
          switch (c) {
         case 1:
-        printf("Insert will be created soon");
+        insertInCList();
         break;
         case 2:
         display();
