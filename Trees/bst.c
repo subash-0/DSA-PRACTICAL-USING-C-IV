@@ -19,16 +19,16 @@ struct node* get_new_node(int x){
   return temp;
 }  
 
-struct node *insert_key(struct node *root, int value) {
+struct node *insert_key(struct node *root, int key) {
     if (root == NULL) {
-        return get_new_node(value);
+        return get_new_node(key);
     }
-    if (value < root->data) {
-        root->left = insert_key(root->left, value);
+    if (key < root->data) {
+        root->left = insert_key(root->left, key);
         printf("inserted left of %d\n", root->data);
     }
-    else if (value > root->data) {
-        root->right = insert_key(root->right, value);
+    else if (key > root->data) {
+        root->right = insert_key(root->right, key);
         printf("inserted right of %d\n", root->data);
     }
     return root;
