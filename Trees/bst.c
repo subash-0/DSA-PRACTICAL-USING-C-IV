@@ -88,7 +88,7 @@ void create() {
         }
         printf("Choose (y/Y) to enter more data: ");
         scanf(" %c", &ch);
-        system("clear");
+        
 
     } while (ch == 'y' || ch == 'Y');
 }
@@ -154,7 +154,7 @@ void show_BST() {
 
 }
 void insertNew() {
-    system("clear");
+    
     int value;
     printf("Enter value to be inserted: ");
     scanf("%d", &value);
@@ -169,7 +169,7 @@ void node_Deletion() {
 
 void search_specific_key() {
     int value;
-    system("clear");
+    
     printf("Enter value to be searched: ");
     scanf("%d", &value);
     struct node *result = search_key(root, value);

@@ -15,7 +15,7 @@ int main(){
     system("clear");
     printf("\nEnter No. of dics \n");
     scanf("%d",&n);
-    transfer(n,'S','T', 'A');
+    transfer(n,'S','D', 'A');
     
     return 0;
 }
